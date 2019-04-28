@@ -22,12 +22,12 @@ class Header extends Component {
 
     return (
       <View style={styles.header}>
-        <View style={styles.headerLogo}>
-          { this.renderLeftSide() }
-        </View>
-        <TouchableOpacity
-          onPress={() => navigate('QrScanner')}
-        >
+        <TouchableOpacity onPress={() => navigate('Camera')}>
+          <View style={styles.headerLogo}>
+            { this.renderLeftSide() }
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigate('QrScanner')}>
           <Image 
             style={{ width: 30, height: 30 }} 
             source={require("../assets/qr.png")} 

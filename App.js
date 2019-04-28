@@ -12,11 +12,14 @@ import MyJourney from './screens/MyJourney'
 import MyVoucher from './screens/MyVoucher';
 
 import QrScanner from './screens/QrScanner';
+import Camera from './screens/Camera';
 
 const DiscoverJourneyStack = createStackNavigator({
   DiscoverJourney: { screen: DiscoverJourney },
   JourneyDetail: { screen: JourneyDetail },
-  QrScanner: { screen: QrScanner }
+
+  QrScanner: { screen: QrScanner },
+  Camera: { screen: Camera }
 })
 
 const MyJourneyStack = createStackNavigator({
