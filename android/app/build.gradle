@@ -139,6 +139,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-share')
     implementation project(':react-native-camera')
     implementation project(':react-native-vector-icons')
     implementation project(':react-native-gesture-handler')
