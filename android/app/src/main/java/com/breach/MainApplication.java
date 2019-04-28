@@ -3,6 +3,7 @@ package com.breach;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.kevinresol.react_native_default_preference.RNDefaultPreferencePackage;
 import cl.json.ShareApplication;
 import cl.json.RNSharePackage;
 import org.reactnative.camera.RNCameraPackage;
@@ -28,6 +29,7 @@ public class MainApplication extends Application implements ShareApplication, Re
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNDefaultPreferencePackage(),
             new RNSharePackage(),
             new RNCameraPackage(),
             new VectorIconsPackage(),

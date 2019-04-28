@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, Image, Button, StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import DefaultPreference from 'react-native-default-preference';
 
 import Journey from '../components/Journey'
 import Header from '../components/Header'
