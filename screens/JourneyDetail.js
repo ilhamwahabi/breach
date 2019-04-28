@@ -35,15 +35,15 @@ class JourneyDetail extends Component {
 
           <View style={styles.reward}>
             <MaterialIcons size={20} name="person" color="#0097a7" />
-            <Text style={styles.rewardValue}>Creator: { author }</Text>
+            <Text style={styles.rewardValue}>{ author }</Text>
           </View>
           <View style={styles.reward}>
             <MaterialIcons size={20} name="timer" color="#0097a7" />
-            <Text style={styles.rewardValue}>Duration: { duration } days</Text>
+            <Text style={styles.rewardValue}>{ duration } days</Text>
           </View>
           <View style={styles.reward}>
             <MaterialIcons size={20} name="card-giftcard" color="#0097a7" />
-            <Text style={styles.rewardValue}>Reward: { reward_category }</Text>
+            <Text style={styles.rewardValue}>{ reward_category }</Text>
           </View>
 
           <View style={{ marginBottom: 10 }}></View>
@@ -57,7 +57,8 @@ class JourneyDetail extends Component {
                 <CurrentJourney 
                   isAccomplish={false} 
                   name={place.name} 
-                  image={this.checkImg(place.image_url)} 
+                  image={this.checkImg(place.image_url)}
+                  isHalal={place.is_halal}
                 />
               </TouchableOpacity>
             ))

@@ -44,14 +44,15 @@ class Home extends Component {
           </View>
         </View>
 
-        <CurrentJourney isAccomplish={true} name="Gedung Sate" image={require('../assets/dummy/town.jpg')} />
-        <CurrentJourney isAccomplish={checkedPlace === '2'} name="Tubagus Ismail" image={require('../assets/dummy/town.jpg')} />
+        <CurrentJourney isAccomplish={true} isHalal={true} name="Gedung Sate" image={require('../assets/dummy/town.jpg')} />
+        <CurrentJourney isAccomplish={checkedPlace === '2'} isHalal={true} name="Tubagus Ismail" image={require('../assets/dummy/town.jpg')} />
 
         <View style={styles.redeemButton}>
           <Button
             onPress={() => navigate('Camera')}
             title="Redeem Reward"
             color="#4dd0e1"
+            disabled={checkedPlace === '1'}
             accessibilityLabel="Redeem Reward"
           />
         </View>
