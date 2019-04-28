@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from "react-native";
+import React, { Component } from "react";
+import { View, Text, Button, StyleSheet } from "react-native";
 
-import Header from '../components/Header';
+import Header from "../components/Header";
+import CurrentJourney from "../components/CurrentJourney";
 
 class Home extends Component {
   static navigationOptions = {
@@ -14,9 +15,26 @@ class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>
-          My Journey
-        </Text>
+        <View style={styles.title}>
+          <Text style={styles.name}>Bandung City</Text>
+          <View style={styles.progress}>
+            <Text style={styles.progressItem}>1</Text>
+            <Text style={styles.progressItem}> / </Text>
+            <Text style={styles.progressItem}>2</Text>
+          </View>
+        </View>
+
+        <CurrentJourney isAccomplish={true} name="Gedung Sate" image={require('../assets/dummy/town.jpg')} />
+        <CurrentJourney isAccomplish={false} name="Tubagus Ismail" image={require('../assets/dummy/town.jpg')} />
+
+        <View style={styles.redeemButton}>
+          <Button
+            onPress={() => {}}
+            title="Klaim Hadiah"
+            color="#4dd0e1"
+            accessibilityLabel="Redeem Coupon"
+          />
+        </View>
       </View>
     );
   }
@@ -25,7 +43,24 @@ class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     padding: 20
+  },
+  title: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 15
+  },
+  name: {
+    fontSize: 24
+  },
+  progress: {
+    flexDirection: "row"
+  },
+  progressItem: {
+    fontSize: 20
+  },
+  redeemButton: {
+    marginTop: 15
   }
-})
+});
 
 export default Home;
