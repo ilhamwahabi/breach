@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
+import DefaultPreference from 'react-native-default-preference';
 
 import Header from "../components/Header";
 import CurrentJourney from "../components/CurrentJourney";
@@ -14,22 +15,37 @@ class Home extends Component {
     };
   };
 
+  state = {
+    checkedPlace: ''
+  }
+
+  componentDidMount() {
+    DefaultPreference.get('checkedPlace')
+      .then(value => this.setState({ checkedPlace: value }))
+      .catch(error => this.setState({ checkedPlace: error }))
+  }
+
   render() {
+    DefaultPreference.get('checkedPlace')
+      .then(value => this.setState({ checkedPlace: value }))
+      .catch(error => this.setState({ checkedPlace: error }))
+
     const { navigate } = this.props.navigation;
+    const { checkedPlace } = this.state
 
     return (
       <View style={styles.container}>
         <View style={styles.title}>
           <Text style={styles.name}>Bandung City</Text>
           <View style={styles.progress}>
-            <Text style={styles.progressItem}>1</Text>
+            <Text style={styles.progressItem}>{ checkedPlace }</Text>
             <Text style={styles.progressItem}> / </Text>
             <Text style={styles.progressItem}>2</Text>
           </View>
         </View>
 
         <CurrentJourney isAccomplish={true} name="Gedung Sate" image={require('../assets/dummy/town.jpg')} />
-        <CurrentJourney isAccomplish={false} name="Tubagus Ismail" image={require('../assets/dummy/town.jpg')} />
+        <CurrentJourney isAccomplish={checkedPlace === '2'} name="Tubagus Ismail" image={require('../assets/dummy/town.jpg')} />
 
         <View style={styles.redeemButton}>
           <Button

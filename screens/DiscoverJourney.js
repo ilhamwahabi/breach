@@ -25,8 +25,13 @@ class DiscoverJourney extends Component {
   async componentDidMount() {
     const { data } = await api.get('/journey/?format=json')
 
-    console.log(data)
     this.setState({ journey: data })
+
+    try {
+      await DefaultPreference.set('checkedPlace', '1')
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   render() {

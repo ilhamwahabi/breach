@@ -19,13 +19,13 @@ const DiscoverJourneyStack = createStackNavigator({
   DiscoverJourney: { screen: DiscoverJourney },
   JourneyDetail: { screen: JourneyDetail },
   PlaceDetail: { screen: PlaceDetail },
-
-  QrScanner: { screen: QrScanner },
-  Camera: { screen: Camera }
 })
 
 const MyJourneyStack = createStackNavigator({
-  MyJourney: { screen: MyJourney }
+  MyJourney: { screen: MyJourney },
+
+  QrScanner: { screen: QrScanner },
+  Camera: { screen: Camera }
 })
 
 const MyVoucherStack = createStackNavigator({

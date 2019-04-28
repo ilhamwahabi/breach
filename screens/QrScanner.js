@@ -2,12 +2,21 @@
 
 import React, { Component } from 'react';
 import QRCodeScanner from 'react-native-qrcode-scanner';
+import DefaultPreference from 'react-native-default-preference';
 
 import qrcode from '../apis/qrcode'
 
 class QrScanner extends Component {
   static navigationOptions = {
     title: 'Scan QR Code'
+  }
+
+  async componentDidMount() {
+    try {
+      await DefaultPreference.set('checkedPlace', '2')
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   async onSuccess(event) {
