@@ -15,6 +15,8 @@ class Home extends Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
+
     return (
       <View style={styles.container}>
         <View style={styles.title}>
@@ -31,7 +33,7 @@ class Home extends Component {
 
         <View style={styles.redeemButton}>
           <Button
-            onPress={() => {}}
+            onPress={() => navigate('Camera')}
             title="Redeem Reward"
             color="#4dd0e1"
             accessibilityLabel="Redeem Reward"
