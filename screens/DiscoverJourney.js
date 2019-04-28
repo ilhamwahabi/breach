@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
+import Journey from '../components/Journey'
+
 class Header extends Component {
   render() {
     return (
@@ -32,7 +34,7 @@ class DiscoverJourney extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Discover Journey</Text>
+        <Journey name="Bandung City" reward="Voucher 50% di Crisbar" img={require("../assets/dummy/building.png")} />
       </View>
     );
   }
