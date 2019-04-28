@@ -4,6 +4,9 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import Journey from '../components/Journey'
 import Header from '../components/Header'
 
+import api from '../apis'
+import { ScrollView } from "react-native-gesture-handler";
+
 class DiscoverJourney extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
@@ -14,17 +17,31 @@ class DiscoverJourney extends Component {
     };
   };
 
+  state = {
+    journey: []
+  }
+
+  async componentDidMount() {
+    const { data } = await api.get('/journey/?format=json')
+
+    console.log(data)
+    this.setState({ journey: data })
+  }
+
   render() {
+    const { navigate } = this.props.navigation
+
     return (
       <View style={styles.container}>
-        <Journey 
-          name="Bandung City" 
-          reward="Platinum"
-          creator="Atta Halilintar"
-          duration="1 week"
-          img={require("../assets/dummy/town.jpg")} 
-          navigate={this.props.navigation.navigate}
-        />
+        <ScrollView>
+          { this.state.journey.map((j, index) => (
+            <Journey 
+              key={index}
+              journey={j}
+              navigate={navigate}
+            />
+          )) }
+        </ScrollView>
       </View>
     );
   }

@@ -4,7 +4,15 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 class Journey extends Component {
   render() {
-    const { name, creator, reward, duration, img, navigate } = this.props
+    const { navigate } = this.props
+    const { title, author, image_url, duration, reward_category } = this.props.journey
+
+    let img;
+    if (image_url) {
+      img = { uri: image_url }
+    } else {
+      img = require('../assets/dummy/town.jpg')
+    }
 
     return (
       <View style={styles.container}>
@@ -14,22 +22,22 @@ class Journey extends Component {
         />
         <View>
           <View>
-            <Text style={styles.name}>{ name }</Text>
+            <Text style={styles.name}>{ title }</Text>
             <View style={styles.reward}>
               <MaterialIcons size={20} name="person" color="#0097a7" />
-              <Text style={styles.rewardValue}>Creator: { creator }</Text>
+              <Text style={styles.rewardValue}>Creator: { author }</Text>
             </View>
             <View style={styles.reward}>
               <MaterialIcons size={20} name="timer" color="#0097a7" />
-              <Text style={styles.rewardValue}>Duration: { duration }</Text>
+              <Text style={styles.rewardValue}>Duration: { duration } days</Text>
             </View>
             <View style={styles.reward}>
               <MaterialIcons size={20} name="card-giftcard" color="#0097a7" />
-              <Text style={styles.rewardValue}>Reward: { reward }</Text>
+              <Text style={styles.rewardValue}>Reward: { reward_category }</Text>
             </View>
           </View>
           <Button
-            onPress={() => navigate('JourneyDetail', { name })}
+            onPress={() => navigate('JourneyDetail', { name: title })}
             title="Journey Detail"
             color="#4dd0e1"
             accessibilityLabel="Journey Detail"
