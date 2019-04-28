@@ -19,10 +19,10 @@ class Voucher extends Component {
           <Image style={{ width: 70, height: 70 }} source={img} />
         </View>
         <Button
-          onPress={() => navigate('VoucherDetail', { name })}
-          title="Voucher Detail"
+          onPress={() => {}}
+          title="Use Voucher"
           color="#4dd0e1"
-          accessibilityLabel="Voucher Detail"
+          accessibilityLabel="Use Voucher"
         />
       </React.Fragment>
     );

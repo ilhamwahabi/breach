@@ -10,7 +10,6 @@ import JourneyDetail from './screens/JourneyDetail';
 import MyJourney from './screens/MyJourney'
 
 import MyVoucher from './screens/MyVoucher';
-import VoucherDetail from './screens/VoucherDetail';
 
 const DiscoverJourneyStack = createStackNavigator({
   DiscoverJourney: { screen: DiscoverJourney },
@@ -23,7 +22,6 @@ const MyJourneyStack = createStackNavigator({
 
 const MyVoucherStack = createStackNavigator({
   MyVoucher: { screen: MyVoucher },
-  VoucherDetail: { screen: VoucherDetail }
 })
 
 const App = createMaterialBottomTabNavigator({
