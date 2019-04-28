@@ -6,6 +6,10 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 import qrcode from '../apis/qrcode'
 
 class QrScanner extends Component {
+  static navigationOptions = {
+    title: 'Scan QR Code'
+  }
+
   async onSuccess(event) {
     const { data } = await qrcode.post('/api/qr', {
       token: event.data,

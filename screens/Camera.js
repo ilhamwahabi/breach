@@ -4,6 +4,10 @@ import { AppRegistry, StyleSheet, Text, TouchableOpacity, View } from 'react-nat
 import { RNCamera } from 'react-native-camera';
 
 class Camera extends Component {
+  static navigationOptions = {
+    title: 'Take Picture'
+  }
+
   render() {
     return (
       <View style={styles.container}>
