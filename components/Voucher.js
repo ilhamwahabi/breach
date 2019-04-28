@@ -12,7 +12,7 @@ class Voucher extends Component {
           <Text style={styles.name}>{ name }</Text>
           <View style={styles.expired}>
             <MaterialIcons size={20} name="broken-image" color="#d50000" />
-            <Text style={styles.expiredValue}>{ expired }</Text>
+            <Text style={styles.expiredValue}>Expired: { expired }</Text>
           </View>
         </View>
         <Image style={{ width: 70, height: 70 }} source={img} />
