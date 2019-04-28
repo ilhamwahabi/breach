@@ -11,41 +11,52 @@ class JourneyDetail extends Component {
     };
   };
 
+  checkImg = (image_url) => {
+    let img
+    if (image_url) {
+      img = { uri: image_url }
+    } else {
+      img = require('../assets/dummy/town.jpg')
+    }
+    return img
+  }
+
   render() {
+    const { title, author, image_url, place_status, duration, reward_category } = this.props.navigation.getParam('journey')
+
     return (
       <View style={styles.container}>
         <ScrollView>
           <Image 
-            source={require('../assets/dummy/town.jpg')} 
+            source={this.checkImg(image_url)} 
             style={{ width: '100%', height: 200, marginBottom: 20 }}
           />
 
           <View style={styles.reward}>
             <MaterialIcons size={20} name="person" color="#0097a7" />
-            <Text style={styles.rewardValue}>Creator: Atta Halilintar</Text>
+            <Text style={styles.rewardValue}>Creator: { author }</Text>
           </View>
           <View style={styles.reward}>
             <MaterialIcons size={20} name="timer" color="#0097a7" />
-            <Text style={styles.rewardValue}>Duration: 1 week</Text>
+            <Text style={styles.rewardValue}>Duration: { duration } days</Text>
           </View>
           <View style={styles.reward}>
             <MaterialIcons size={20} name="card-giftcard" color="#0097a7" />
-            <Text style={styles.rewardValue}>Reward: Platinum</Text>
+            <Text style={styles.rewardValue}>Reward: { reward_category }</Text>
           </View>
 
           <View style={{ marginBottom: 10 }}></View>
 
-          <CurrentJourney 
-            isAccomplish={false} 
-            name="Gedung Sate" 
-            image={require('../assets/dummy/town.jpg')} 
-          />
-
-          <CurrentJourney 
-            isAccomplish={false} 
-            name="Tubagus Ismail" 
-            image={require('../assets/dummy/town.jpg')} 
-          />
+          {
+            place_status.map(({ id, place }, index) => (
+              <CurrentJourney 
+                key={id}
+                isAccomplish={false} 
+                name={place.name} 
+                image={this.checkImg(place.image_url)} 
+              />   
+            ))
+          }
 
           <View style={{ marginTop: 15 }}>
             <Button

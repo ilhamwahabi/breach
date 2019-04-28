@@ -4,8 +4,8 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 class Journey extends Component {
   render() {
-    const { navigate } = this.props
-    const { title, author, image_url, duration, reward_category } = this.props.journey
+    const { navigate, journey } = this.props
+    const { title, author, image_url, duration, reward_category } = journey
 
     let img;
     if (image_url) {
@@ -37,7 +37,7 @@ class Journey extends Component {
             </View>
           </View>
           <Button
-            onPress={() => navigate('JourneyDetail', { name: title })}
+            onPress={() => navigate('JourneyDetail', { name: title, journey })}
             title="Journey Detail"
             color="#4dd0e1"
             accessibilityLabel="Journey Detail"
