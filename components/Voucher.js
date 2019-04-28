@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, Button, StyleSheet } from "react-native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 class Voucher extends Component {
   render() {
-    const { name, expired, img } = this.props
+    const { name, expired, navigate, img } = this.props
 
     return (
-      <View style={styles.container}>
-        <View>
-          <Text style={styles.name}>{ name }</Text>
-          <View style={styles.expired}>
-            <MaterialIcons size={20} name="broken-image" color="#d50000" />
-            <Text style={styles.expiredValue}>Expired: { expired }</Text>
+      <React.Fragment>
+        <View style={styles.container}>
+          <View>
+            <Text style={styles.name}>{ name }</Text>
+            <View style={styles.expired}>
+              <MaterialIcons size={20} name="broken-image" color="#d50000" />
+              <Text style={styles.expiredValue}>Expired: { expired }</Text>
+            </View>
           </View>
+          <Image style={{ width: 70, height: 70 }} source={img} />
         </View>
-        <Image style={{ width: 70, height: 70 }} source={img} />
-      </View>
+        <Button
+          onPress={() => navigate('VoucherDetail', { name })}
+          title="Voucher Detail"
+          color="#4dd0e1"
+          accessibilityLabel="Voucher Detail"
+        />
+      </React.Fragment>
     );
   }
 }

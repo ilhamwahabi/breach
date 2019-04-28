@@ -13,23 +13,23 @@ import MyVoucher from './screens/MyVoucher';
 import VoucherDetail from './screens/VoucherDetail';
 
 const DiscoverJourneyStack = createStackNavigator({
-  Main: { screen: DiscoverJourney },
-  Detail: { screen: JourneyDetail }
+  DiscoverJourney: { screen: DiscoverJourney },
+  JourneyDetail: { screen: JourneyDetail }
 })
 
 const MyJourneyStack = createStackNavigator({
-  Main: { screen: MyJourney }
+  MyJourney: { screen: MyJourney }
 })
 
 const MyVoucherStack = createStackNavigator({
-  Main: { screen: MyVoucher },
-  Detail: { screen: VoucherDetail }
+  MyVoucher: { screen: MyVoucher },
+  VoucherDetail: { screen: VoucherDetail }
 })
 
 const App = createMaterialBottomTabNavigator({
   ["Discover Journey"]: { screen: DiscoverJourneyStack },
   ["My Journey"]: { screen: MyJourneyStack },
-  ["My Voucher"]: { screen: MyVoucher }
+  ["My Voucher"]: { screen: MyVoucherStack }
 }, {
   defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {

@@ -29,7 +29,7 @@ class Journey extends Component {
             </View>
           </View>
           <Button
-            onPress={() => navigate('Detail', { name })}
+            onPress={() => navigate('JourneyDetail', { name })}
             title="Journey Detail"
             color="#4dd0e1"
             accessibilityLabel="Journey Detail"

@@ -15,7 +15,12 @@ class MyVoucher extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Voucher name="Voucher 50% Crisbar" expired="26 Mai 2020" img={require('../assets/dummy/store.png')} />
+        <Voucher 
+          name="Voucher 50% Crisbar" 
+          expired="26 Mai 2020" 
+          img={require('../assets/dummy/store.png')}
+          navigate={this.props.navigation.navigate}
+        />
       </View>
     );
   }
