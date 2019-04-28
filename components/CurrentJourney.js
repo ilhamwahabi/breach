@@ -9,12 +9,12 @@ class CurrentJourney extends Component {
     return (
       <View style={styles.container}>
         <View style={{ flexDirection: 'row', marginBottom: 10, alignItems: 'center' }}>
-          { isAccomplish 
-            ? <FontAwesome name="check" color="#00c853" size={24} />
-            : <FontAwesome name="clock" color="#424242" size={24} />
+          { 
+            isAccomplish 
+            ? <FontAwesome name="check" color="#00c853" size={18} />
+            : <FontAwesome name="clock" color="#424242" size={18} />
           }
-          
-          <Text style={{ marginLeft: 15, fontSize: 24 }}>{ name }</Text>
+          <Text style={{ marginLeft: 15, fontSize: 18 }}>{ name }</Text>
         </View>
         <Image 
           source={image}

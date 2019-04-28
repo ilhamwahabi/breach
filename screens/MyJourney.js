@@ -30,9 +30,9 @@ class Home extends Component {
         <View style={styles.redeemButton}>
           <Button
             onPress={() => {}}
-            title="Klaim Hadiah"
+            title="Redeem Reward"
             color="#4dd0e1"
-            accessibilityLabel="Redeem Coupon"
+            accessibilityLabel="Redeem Reward"
           />
         </View>
       </View>
