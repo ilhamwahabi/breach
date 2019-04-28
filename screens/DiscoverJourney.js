@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, Button, StyleSheet } from "react-native";
 
 import Journey from '../components/Journey'
 import Header from '../components/Header'
@@ -33,6 +33,14 @@ class DiscoverJourney extends Component {
 
     return (
       <View style={styles.container}>
+        <Button
+          onPress={() => {}}
+          title="Create Your Own Journey"
+          color="#00c853"
+          accessibilityLabel="Create Journey"
+        />
+        <View style={{ marginBottom: 10 }}></View>
+
         <ScrollView>
           { this.state.journey.map((j, index) => (
             <Journey 
