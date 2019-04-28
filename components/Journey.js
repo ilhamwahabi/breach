@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import { View, Image, Text, Button, StyleSheet } from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-const levelString = ['Bronze', 'Silver', 'Gold', 'Platinum'];
-
 class Journey extends Component {
-  renderReward = (level) => {
-    return levelString[level];
-  }
-
   render() {
     const { navigate, journey } = this.props
     const { title, author, image_url, duration, reward_category } = journey
@@ -39,7 +33,7 @@ class Journey extends Component {
             </View>
             <View style={styles.reward}>
               <MaterialIcons size={20} name="card-giftcard" color="#0097a7" />
-              <Text style={styles.rewardValue}>{ this.renderReward(reward_category) }</Text>
+              <Text style={styles.rewardValue}>{ reward_category }</Text>
             </View>
           </View>
           <Button
