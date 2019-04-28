@@ -1,30 +1,33 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View} from 'react-native';
+import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
-import Home from './screens/Home';
+import MyJourney from './screens/MyJourney'
+import DiscoverJourney from './screens/DiscoverJourney';
+import MyVoucher from './screens/MyVoucher';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+const DiscoverJourneyStack = createStackNavigator({
+  Main: { screen: DiscoverJourney }
+})
+
+const MyJourneyStack = createStackNavigator({
+  Main: { screen: MyJourney }
+})
+
+const MyVoucherStack = createStackNavigator({
+  Main: { screen: MyVoucher }
+})
+
+const App = createMaterialBottomTabNavigator({
+  ["Discover Journey"]: { screen: DiscoverJourneyStack },
+  ["My Journey"]: { screen: MyJourneyStack },
+  ["My Voucher"]: { screen: MyVoucher },
+}, {
+  initialRouteName: 'Discover Journey',
+  activeColor: '#f0edf6',
+  inactiveColor: '#3e2465',
+  barStyle: { backgroundColor: '#694fad' },
 });
 
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Home />
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  }
-});
+export default createAppContainer(App)

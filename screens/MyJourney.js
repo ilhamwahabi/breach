@@ -6,13 +6,7 @@ class Home extends Component {
     return (
       <View>
         <Text>
-          Navbar
-        </Text>
-        <Text>
-          List of Current Journey
-        </Text>
-        <Text>
-          Bottom Bar
+          My Journey
         </Text>
       </View>
     );
