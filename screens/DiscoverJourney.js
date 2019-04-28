@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { View, Text, Image, Button, StyleSheet } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 import Journey from '../components/Journey'
 import Header from '../components/Header'
 
 import api from '../apis'
-import { ScrollView } from "react-native-gesture-handler";
 
 class DiscoverJourney extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -33,15 +33,16 @@ class DiscoverJourney extends Component {
 
     return (
       <View style={styles.container}>
-        <Button
-          onPress={() => {}}
-          title="Create Your Own Journey"
-          color="#00c853"
-          accessibilityLabel="Create Journey"
-        />
-        <View style={{ marginBottom: 10 }}></View>
+        <View style={styles.createJourneyButton}>
+          <Button
+            onPress={() => {}}
+            title="Create Your Own Journey"
+            color="#651fff"
+            accessibilityLabel="Create Journey"
+          />
+        </View>
 
-        <ScrollView>
+        <ScrollView style={styles.scrollView}>
           { this.state.journey.map((j, index) => (
             <Journey 
               key={index}
@@ -58,6 +59,13 @@ class DiscoverJourney extends Component {
 const styles = StyleSheet.create({
   container: {
     padding: 15
+  },
+  createJourneyButton: { 
+    marginBottom: 10, 
+    paddingHorizontal: 10 
+  },
+  scrollView: {
+    marginBottom: 35
   }
 });
 
