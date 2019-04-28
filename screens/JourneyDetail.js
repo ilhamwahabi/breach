@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, Button, ScrollView } from "react-native";
+import { View, Text, StyleSheet, Image, Button, ScrollView, TouchableOpacity } from "react-native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
 import CurrentJourney from '../components/CurrentJourney';
@@ -23,6 +23,7 @@ class JourneyDetail extends Component {
 
   render() {
     const { title, author, image_url, place_status, duration, reward_category } = this.props.navigation.getParam('journey')
+    const navigate = this.props.navigation.getParam('navigate')
 
     return (
       <View style={styles.container}>
@@ -49,12 +50,16 @@ class JourneyDetail extends Component {
 
           {
             place_status.map(({ id, place }, index) => (
-              <CurrentJourney 
+              <TouchableOpacity 
                 key={id}
-                isAccomplish={false} 
-                name={place.name} 
-                image={this.checkImg(place.image_url)} 
-              />   
+                onPress={() => navigate('PlaceDetail', { name: place.name, place })}
+              >
+                <CurrentJourney 
+                  isAccomplish={false} 
+                  name={place.name} 
+                  image={this.checkImg(place.image_url)} 
+                />
+              </TouchableOpacity>
             ))
           }
 

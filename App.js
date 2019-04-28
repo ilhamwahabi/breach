@@ -6,6 +6,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import DiscoverJourney from './screens/DiscoverJourney';
 import JourneyDetail from './screens/JourneyDetail';
+import PlaceDetail from './screens/PlaceDetail';
 
 import MyJourney from './screens/MyJourney'
 
@@ -17,6 +18,7 @@ import Camera from './screens/Camera';
 const DiscoverJourneyStack = createStackNavigator({
   DiscoverJourney: { screen: DiscoverJourney },
   JourneyDetail: { screen: JourneyDetail },
+  PlaceDetail: { screen: PlaceDetail },
 
   QrScanner: { screen: QrScanner },
   Camera: { screen: Camera }
