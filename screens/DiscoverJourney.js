@@ -17,7 +17,9 @@ class DiscoverJourney extends Component {
       <View style={styles.container}>
         <Journey 
           name="Bandung City" 
-          reward="Voucher 50% di Crisbar" 
+          reward="Platinum"
+          creator="Atta Halilintar"
+          duration="1 week"
           img={require("../assets/dummy/town.jpg")} 
           navigate={this.props.navigation.navigate}
         />

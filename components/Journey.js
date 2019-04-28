@@ -4,7 +4,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 class Journey extends Component {
   render() {
-    const { name, reward, img, navigate } = this.props
+    const { name, creator, reward, duration, img, navigate } = this.props
 
     return (
       <View style={styles.container}>
@@ -16,8 +16,16 @@ class Journey extends Component {
           <View style>
             <Text style={styles.name}>{ name }</Text>
             <View style={styles.reward}>
+              <MaterialIcons size={20} name="person" color="#0097a7" />
+              <Text style={styles.rewardValue}>Creator: { creator }</Text>
+            </View>
+            <View style={styles.reward}>
+              <MaterialIcons size={20} name="timer" color="#0097a7" />
+              <Text style={styles.rewardValue}>Duration: { duration }</Text>
+            </View>
+            <View style={styles.reward}>
               <MaterialIcons size={20} name="card-giftcard" color="#0097a7" />
-              <Text style={styles.rewardValue}>{ reward }</Text>
+              <Text style={styles.rewardValue}>Reward: { reward }</Text>
             </View>
           </View>
           <Button
