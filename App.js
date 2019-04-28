@@ -3,12 +3,17 @@ import { StyleSheet, Text, View} from 'react-native';
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
-import MyJourney from './screens/MyJourney'
 import DiscoverJourney from './screens/DiscoverJourney';
+import JourneyDetail from './screens/JourneyDetail';
+
+import MyJourney from './screens/MyJourney'
+
 import MyVoucher from './screens/MyVoucher';
+import VoucherDetail from './screens/VoucherDetail';
 
 const DiscoverJourneyStack = createStackNavigator({
-  Main: { screen: DiscoverJourney }
+  Main: { screen: DiscoverJourney },
+  Detail: { screen: JourneyDetail }
 })
 
 const MyJourneyStack = createStackNavigator({
@@ -16,7 +21,8 @@ const MyJourneyStack = createStackNavigator({
 })
 
 const MyVoucherStack = createStackNavigator({
-  Main: { screen: MyVoucher }
+  Main: { screen: MyVoucher },
+  Detail: { screen: VoucherDetail }
 })
 
 const App = createMaterialBottomTabNavigator({
