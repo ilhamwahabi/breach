@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
 class Header extends Component {
   renderLeftSide = () => {
@@ -18,15 +18,21 @@ class Header extends Component {
   }
 
   render() {
+    const { navigate } = this.props
+
     return (
       <View style={styles.header}>
         <View style={styles.headerLogo}>
           { this.renderLeftSide() }
         </View>
-        <Image
-          source={require("../assets/qr.png")}
-          style={{ width: 30, height: 30 }}
-        />
+        <TouchableOpacity
+          onPress={() => navigate('QrScanner')}
+        >
+          <Image 
+            style={{ width: 30, height: 30 }} 
+            source={require("../assets/qr.png")} 
+          />
+        </TouchableOpacity>
       </View>
     );
   }

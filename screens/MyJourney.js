@@ -5,11 +5,13 @@ import Header from "../components/Header";
 import CurrentJourney from "../components/CurrentJourney";
 
 class Home extends Component {
-  static navigationOptions = {
-    headerTitle: <Header title="My Journey" />,
-    headerStyle: {
-      backgroundColor: "#4dd0e1"
-    }
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: <Header title="My Journey" navigate={navigation.navigate} />,
+      headerStyle: {
+        backgroundColor: "#4dd0e1"
+      }
+    };
   };
 
   render() {

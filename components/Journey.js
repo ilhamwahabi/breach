@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, Text, Button, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Image, Text, Button, StyleSheet } from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 class Journey extends Component {

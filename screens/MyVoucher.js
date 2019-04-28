@@ -5,11 +5,13 @@ import Voucher from '../components/Voucher';
 import Header from '../components/Header';
 
 class MyVoucher extends Component {
-  static navigationOptions = {
-    headerTitle: <Header title="My Voucher" />,
-    headerStyle: {
-      backgroundColor: "#4dd0e1"
-    }
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: <Header title="My Voucher" navigate={navigation.navigate} />,
+      headerStyle: {
+        backgroundColor: "#4dd0e1"
+      }
+    };
   };
 
   render() {

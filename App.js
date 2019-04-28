@@ -11,9 +11,12 @@ import MyJourney from './screens/MyJourney'
 
 import MyVoucher from './screens/MyVoucher';
 
+import QrScanner from './screens/QrScanner';
+
 const DiscoverJourneyStack = createStackNavigator({
   DiscoverJourney: { screen: DiscoverJourney },
-  JourneyDetail: { screen: JourneyDetail }
+  JourneyDetail: { screen: JourneyDetail },
+  QrScanner: { screen: QrScanner }
 })
 
 const MyJourneyStack = createStackNavigator({
@@ -27,7 +30,7 @@ const MyVoucherStack = createStackNavigator({
 const App = createMaterialBottomTabNavigator({
   ["Discover Journey"]: { screen: DiscoverJourneyStack },
   ["My Journey"]: { screen: MyJourneyStack },
-  ["My Voucher"]: { screen: MyVoucherStack }
+  ["My Voucher"]: { screen: MyVoucherStack },
 }, {
   defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {

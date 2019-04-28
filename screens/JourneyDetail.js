@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, Button, ScrollView, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, Button, ScrollView } from "react-native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
 import CurrentJourney from '../components/CurrentJourney';

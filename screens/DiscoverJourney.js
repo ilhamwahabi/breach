@@ -5,11 +5,13 @@ import Journey from '../components/Journey'
 import Header from '../components/Header'
 
 class DiscoverJourney extends Component {
-  static navigationOptions = {
-    headerTitle: <Header />,
-    headerStyle: {
-      backgroundColor: "#4dd0e1"
-    }
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: <Header navigate={navigation.navigate} />,
+      headerStyle: {
+        backgroundColor: "#4dd0e1"
+      }
+    };
   };
 
   render() {
