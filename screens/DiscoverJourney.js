@@ -1,17 +1,23 @@
-import React, { Component } from 'react';
-import { View, Text, Image } from "react-native";
+import React, { Component } from "react";
+import { View, Text, Image, StyleSheet } from "react-native";
 
 class Header extends Component {
   render() {
     return (
-      <View>
-        <Text>Breach</Text>
+      <View style={styles.header}>
+        <View style={styles.headerLogo}>
+          <Image
+            source={require("../assets/logo.png")}
+            style={{ width: 30, height: 30 }}
+          />
+          <Text style={styles.headerText}>Breach</Text>
+        </View>
         <Image
-          source={require('../assets/logo.png')}
+          source={require("../assets/qr.png")}
           style={{ width: 30, height: 30 }}
         />
       </View>
-    )
+    );
   }
 }
 
@@ -19,20 +25,38 @@ class DiscoverJourney extends Component {
   static navigationOptions = {
     headerTitle: <Header />,
     headerStyle: {
-      backgroundColor: '#4dd0e1'
-    },
-    headerTitleStyle: {
-      color: '#e0f7fa'
+      backgroundColor: "#4dd0e1"
     }
   };
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text>Discover Journey</Text>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+    padding: 20
+  },
+  headerLogo: {
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  headerText: {
+    fontSize: 20,
+    color: "white",
+    marginLeft: 15
+  },
+  container: {
+    padding: 15
+  }
+});
 
 export default DiscoverJourney;
