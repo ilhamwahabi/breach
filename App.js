@@ -29,7 +29,7 @@ const MyVoucherStack = createStackNavigator({
 const App = createMaterialBottomTabNavigator({
   ["Discover Journey"]: { screen: DiscoverJourneyStack },
   ["My Journey"]: { screen: MyJourneyStack },
-  ["My Voucher"]: { screen: MyVoucher },
+  ["My Voucher"]: { screen: MyVoucher }
 }, {
   defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {
@@ -46,7 +46,7 @@ const App = createMaterialBottomTabNavigator({
       return <IconComponent name={iconName} size={25} color={tintColor} />;
     },
   }),
-  initialRouteName: 'Discover Journey',
+  initialRouteName: 'My Journey',
   activeColor: '#fff',
   inactiveColor: '#b2ebf2',
   barStyle: { backgroundColor: '#4dd0e1' },    

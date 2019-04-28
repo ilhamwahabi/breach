@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from "react-native";
+
 import Voucher from '../components/Voucher';
+import Header from '../components/Header';
 
 class MyVoucher extends Component {
+  static navigationOptions = {
+    headerTitle: <Header title="My Voucher" />,
+    headerStyle: {
+      backgroundColor: "#4dd0e1"
+    }
+  };
+
   render() {
     return (
       <View style={styles.container}>
