@@ -27,7 +27,7 @@ class CurrentJourney extends Component {
 
 const styles = StyleSheet.create({
   container: { 
-    marginBottom: 15,
+    marginBottom: 20,
     flexDirection: 'column'
   }
 })

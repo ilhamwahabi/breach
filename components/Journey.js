@@ -13,7 +13,7 @@ class Journey extends Component {
           style={{ height: 70, width: '100%' }}
         />
         <View>
-          <View style>
+          <View>
             <Text style={styles.name}>{ name }</Text>
             <View style={styles.reward}>
               <MaterialIcons size={20} name="person" color="#0097a7" />
