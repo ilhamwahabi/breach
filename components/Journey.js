@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { View, Image, Text, Button, StyleSheet } from 'react-native'
+import { View, Image, Text, Button, StyleSheet, TouchableOpacity } from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 class Journey extends Component {
   render() {
-    const { name, reward, img } = this.props
+    const { name, reward, img, navigate } = this.props
 
     return (
       <View style={styles.container}>
@@ -21,7 +21,7 @@ class Journey extends Component {
             </View>
           </View>
           <Button
-            onPress={() => {}}
+            onPress={() => navigate('Detail', { name })}
             title="Lihat Journey"
             color="#4dd0e1"
             accessibilityLabel="Lihat detail Journey"

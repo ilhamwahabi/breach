@@ -15,7 +15,12 @@ class DiscoverJourney extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Journey name="Bandung City" reward="Voucher 50% di Crisbar" img={require("../assets/dummy/town.jpg")} />
+        <Journey 
+          name="Bandung City" 
+          reward="Voucher 50% di Crisbar" 
+          img={require("../assets/dummy/town.jpg")} 
+          navigate={this.props.navigation.navigate}
+        />
       </View>
     );
   }

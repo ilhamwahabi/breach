@@ -46,7 +46,7 @@ const App = createMaterialBottomTabNavigator({
       return <IconComponent name={iconName} size={25} color={tintColor} />;
     },
   }),
-  initialRouteName: 'My Journey',
+  initialRouteName: 'Discover Journey',
   activeColor: '#fff',
   inactiveColor: '#b2ebf2',
   barStyle: { backgroundColor: '#4dd0e1' },    
