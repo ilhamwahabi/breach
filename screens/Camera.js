@@ -1,6 +1,7 @@
 'use strict';
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Share from 'react-native-share';
 import { RNCamera } from 'react-native-camera';
 
 class Camera extends Component {
@@ -38,7 +39,14 @@ class Camera extends Component {
     if (this.camera) {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options);
-      console.log(data.uri);
+
+      const shareOptions = {
+        title: "React Native",
+        message: "Hola mundo",
+        url: data.uri,
+        social: Share.Social.INSTAGRAM,
+      };
+      Share.shareSingle(shareOptions);
     }
   };
 }

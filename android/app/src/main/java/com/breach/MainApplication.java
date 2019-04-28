@@ -3,6 +3,8 @@ package com.breach;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import cl.json.ShareApplication;
+import cl.json.RNSharePackage;
 import org.reactnative.camera.RNCameraPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -14,7 +16,7 @@ import com.facebook.soloader.SoLoader;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainApplication extends Application implements ReactApplication {
+public class MainApplication extends Application implements ShareApplication, ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
@@ -26,6 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNSharePackage(),
             new RNCameraPackage(),
             new VectorIconsPackage(),
             new RNGestureHandlerPackage()
@@ -42,6 +45,11 @@ public class MainApplication extends Application implements ReactApplication {
   public ReactNativeHost getReactNativeHost() {
     return mReactNativeHost;
   }
+
+  @Override
+  public String getFileProviderAuthority() {
+    return BuildConfig.APPLICATION_ID + ".provider";
+    }
 
   @Override
   public void onCreate() {

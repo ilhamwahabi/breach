@@ -22,7 +22,7 @@ class Header extends Component {
 
     return (
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigate('Camera')}>
+        <TouchableOpacity>
           <View style={styles.headerLogo}>
             { this.renderLeftSide() }
           </View>
